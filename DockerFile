@@ -1,0 +1,7 @@
+FROM node:9.3.0-alpine
+RUN mkdir -p /app
+WORKDIR /app
+COPY package.json /app/
+COPY hello.js /app/hello.js
+RUN npm install --production
+CMD [ "node","hello.js"]
